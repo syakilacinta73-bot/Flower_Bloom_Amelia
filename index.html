@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amelia Flower Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigasi -->
+    <nav>
+        <div class="logo">Amelia Flower Shop</div>
+        <div class="controls">
+            <span id="userGreeting" class="greeting-text hidden">Halo, User!</span>
+            <button id="loginBtn" class="auth-btn">Login</button>
+            <button id="logoutBtn" class="auth-btn hidden">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Tampilan Utama Pelanggan / Guest -->
+    <main id="customerView">
+        <div class="masonry-grid" id="productGrid">
+            <!-- Produk bunga dimuat di sini -->
+        </div>
+    </main>
+
+    <!-- Tampilan Admin (Hanya untuk Owner) -->
+    <main id="adminView" class="hidden">
+        <h2>Panel Dashboard Owner</h2>
+        
+        <div class="admin-section">
+            <h3>Tambah Bunga Baru</h3>
+            <form id="addFlowerForm" class="inline-form">
+                <input type="text" id="flowerName" placeholder="Nama Bunga" required>
+                <input type="url" id="flowerImage" placeholder="URL Gambar" required>
+                <input type="number" id="flowerPrice" placeholder="Harga" required>
+                <button type="submit">Tambah</button>
+            </form>
+        </div>
+
+        <div class="admin-section">
+            <h3>Daftar Bunga (Ubah Harga)</h3>
+            <div id="adminProductList" class="admin-list"></div>
+        </div>
+    </main>
+
+    <!-- Modal Pop-up Login -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 style="margin-top:0">Selamat Datang!</h2>
+            <p style="font-size: 14px; color: #666; margin-bottom: 20px;">
+                Login Owner: amelia / owner123<br>
+                Login Pelanggan: pelanggan / user123
+            </p>
+            <form id="loginForm" class="vertical-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <p id="loginError" class="error-text hidden">Username atau Password salah!</p>
+                <button type="submit">Masuk</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
